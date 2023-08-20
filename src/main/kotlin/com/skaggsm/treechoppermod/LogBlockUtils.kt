@@ -208,8 +208,7 @@ fun maybeBreakAllLogs(
 fun canBreakLog(player: PlayerEntity, state: BlockState): Boolean {
     return state.isChoppable &&
         config.sneakBehavior.shouldChop(player.isSneaking) &&
-        !(player.isCreative && !config.chopInCreativeMode) &&
-        player.mainHandStack.item.id in config.axes
+        !(player.isCreative && !config.chopInCreativeMode)
 }
 
 fun tryLogBreak(world: World, player: PlayerEntity, pos: BlockPos, state: BlockState) {
